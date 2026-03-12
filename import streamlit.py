@@ -62,10 +62,10 @@ with c3: card(df.isnull().sum().sum(), "Nulos")
 with c4: card(len(num_cols), "Numéricas")
 
 tags = "".join([
-    *[f'<span style="background:#0d2137;color:#4fc3f7;border:1px solid #1e5f8a;padding:2px 9px;border-radius:20px;font-size:.72rem;margin:2px;display:inline-block">🔢 {c}</span>' for c in num_cols],
-    *[f'<span style="background:#1a0d37;color:#ce93d8;border:1px solid #6a3a8a;padding:2px 9px;border-radius:20px;font-size:.72rem;margin:2px;display:inline-block">🏷️ {c}</span>' for c in cat_cols],
-    *[f'<span style="background:#0d2e1a;color:#66bb6a;border:1px solid #2a6a3a;padding:2px 9px;border-radius:20px;font-size:.72rem;margin:2px;display:inline-block">📅 {c}</span>' for c in date_cols],
-    *[f'<span style="background:#2e1a0d;color:#ffb74d;border:1px solid #8a5a2a;padding:2px 9px;border-radius:20px;font-size:.72rem;margin:2px;display:inline-block">⚡ {c}</span>' for c in bin_cols],
+    *[f'<span style="background:#0d2137;color:#4fc3f7;border:1px solid #1e5f8a;padding:2px 9px;border-radius:20px;font-size:.72rem;margin:2px;display:inline-block"> {c}</span>' for c in num_cols],
+    *[f'<span style="background:#1a0d37;color:#ce93d8;border:1px solid #6a3a8a;padding:2px 9px;border-radius:20px;font-size:.72rem;margin:2px;display:inline-block"> {c}</span>' for c in cat_cols],
+    *[f'<span style="background:#0d2e1a;color:#66bb6a;border:1px solid #2a6a3a;padding:2px 9px;border-radius:20px;font-size:.72rem;margin:2px;display:inline-block"> {c}</span>' for c in date_cols],
+    *[f'<span style="background:#2e1a0d;color:#ffb74d;border:1px solid #8a5a2a;padding:2px 9px;border-radius:20px;font-size:.72rem;margin:2px;display:inline-block"> {c}</span>' for c in bin_cols],
 ])
 st.markdown(tags, unsafe_allow_html=True)
 
@@ -205,4 +205,5 @@ msgs = [
 ]
 if acc: msgs.append(f" Naive Bayes: {acc*100:.1f}% exactitud, sensibilidad {sens*100:.1f}%, especificidad {spec*100:.1f}%")
 for m in msgs:
+
     st.markdown(f'<div style="background:#0d1f0d;border:1px solid #2a5a2a;border-radius:8px;padding:14px;margin:6px 0;color:#a5d6a7">{m}</div>', unsafe_allow_html=True)
